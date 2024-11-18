@@ -3,15 +3,15 @@ class Calculator:
         return a + b
 
     def subtract(self, a, b):
-        return a - b  # Ensure subtraction is correct
+        return a - b
 
     def multiply(self, a, b):
         result = 0
         if b < 0:
-            for i in range(-b):  # Loop for negative multiplier
+            for i in range(-b):
                 result = self.subtract(result, a)  # Subtract a
         else:
-            for i in range(b):  # Loop for positive multiplier
+            for i in range(b):  # Loop for positive
                 result = self.add(result, a)  # Add a
         return result
 
@@ -19,15 +19,15 @@ class Calculator:
         if b == 0:
             raise ValueError("Cannot divide by zero")  # Handle division by zero
         result = 0
-        while a >= b:  # Continue subtracting until a is less than b
+        while a >= b:  # subtracting until a less than b
             a = self.subtract(a, b)
-            result = self.add(result, 1)  # Add 1 to result
+            result = self.add(result, 1)  # Add 1 
         return result
 
     def modulo(self, a, b):
         if b == 0:
             raise ValueError("Cannot modulo by zero")  # Handle modulo by zero
-        while a >= b:  # Continue subtracting until a is less than b
+        while a >= b:  # subtracting until a is less than b
             a = self.subtract(a, b)
         return a  # Return the remainder
 
